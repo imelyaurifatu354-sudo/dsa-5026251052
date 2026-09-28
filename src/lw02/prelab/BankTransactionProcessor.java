@@ -4,6 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
+package lw02.prelab;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class BankTransactionProcessor {
 
@@ -15,8 +19,7 @@ public class BankTransactionProcessor {
         LinkedList<String[]> customers = new LinkedList<>();
 
         // --- Membaca file transactions.txt ---
-        try (Scanner fileScanner = new Scanner(new File("transactions.txt"))) {
-            while (fileScanner.hasNextLine()) {
+        try (Scanner fileScanner = new Scanner(new File("src/lw02/prelab/transactions.txt"))) {
                 String line = fileScanner.nextLine().trim();
                 if (line.isEmpty()) continue;
 
@@ -87,6 +90,7 @@ public class BankTransactionProcessor {
         while (!failedTransactions.isEmpty()) {
             String[] trx = failedTransactions.pop(); // LIFO
             System.out.println(trx[0] + " " + trx[1] + " " + trx[2]);
+            
         }
     }
 }
