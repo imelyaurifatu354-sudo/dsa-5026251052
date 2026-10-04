@@ -10,6 +10,7 @@ import java.util.Set;
 
 public class Main {
 
+  
     static void problem1() {
         List<String> playlist = new ArrayList<>();
 
@@ -30,7 +31,7 @@ public class Main {
                         playlist.add(index, p[1]);
                     }
                 } else if (op.equals("REMOVE")) {
-                    playlist.remove(parts[1]); 
+                    playlist.remove(parts[1]); // hapus kemunculan pertama, jika ada
                 }
             }
         } catch (FileNotFoundException e) {
@@ -45,8 +46,11 @@ public class Main {
         }
     }
 
+  
     static void problem2() {
-        Set<String> participants = new LinkedHashSet<>(); 
+        Set<String> participants = new LinkedHashSet<>(); // menjaga urutan kemunculan pertama
+        int duplicates = 0;
+
         try (Scanner sc = new Scanner(new File("participants.txt"))) {
             while (sc.hasNextLine()) {
                 String name = sc.nextLine().trim();
@@ -70,7 +74,7 @@ public class Main {
         System.out.println("Duplicate registrations: " + duplicates);
     }
 
-    // ===== Problem 3: Inventory (Map) =====
+   
     static void problem3() {
         Map<String, Integer> stock = new LinkedHashMap<>(); // menjaga urutan produk pertama kali muncul
         int failedSales = 0;
