@@ -1,3 +1,5 @@
+package lw04.prelab;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -5,8 +7,8 @@ import java.util.Scanner;
 public class RidTimeHop {
 
     public static void main(String[] args) throws FileNotFoundException {
-        //Baca input dari branches.txt 
-        Scanner sc = new Scanner(new File("branches.txt"));
+        //Baca input dari branches.txt
+        Scanner sc = new Scanner(new File("src/lw04/prelab/branches.txt"));
 
         int n = sc.nextInt();
         int[] a = new int[n];
