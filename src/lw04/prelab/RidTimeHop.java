@@ -1,4 +1,3 @@
-package lw04.prelab;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -6,8 +5,8 @@ import java.util.Scanner;
 public class RidTimeHop {
 
     public static void main(String[] args) throws FileNotFoundException {
-        // 1. Baca input dari branches.txt insyaallah gini 
-        Scanner sc = new Scanner(new File("src/lw04/prelab/branches.txt"));
+        //Baca input dari branches.txt 
+        Scanner sc = new Scanner(new File("branches.txt"));
 
         int n = sc.nextInt();
         int[] a = new int[n];
@@ -45,6 +44,7 @@ public class RidTimeHop {
         }
     }
 
+    // Insertion sort descending, berhenti setelah 'passes' pass
     static void insertionSort(int[] a, int passes) {
         for (int i = 1; i <= passes; i++) {
             int key = a[i];
@@ -57,7 +57,7 @@ public class RidTimeHop {
         }
     }
 
-    //Kembalikan index, atau -1 jika tidak ketemu
+    // Linear search: kembalikan index, atau -1 jika tidak ketemu
     static int linearSearch(int[] a, int target) {
         for (int i = 0; i < a.length; i++) {
             if (a[i] == target) {
